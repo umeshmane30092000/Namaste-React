@@ -1,0 +1,17 @@
+{
+  "name": "nama-react",
+  "version": "1.0.0",
+  "description": "this is namaste react",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "umesh mane",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^18.3.1"
+  }
+}
