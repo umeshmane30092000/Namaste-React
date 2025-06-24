@@ -9,3 +9,5 @@
 - code spliting
 - Diffrential bundling
 - Error handling
+
+# npm run start , npm run dev , npm run build
