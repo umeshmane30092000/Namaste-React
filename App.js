@@ -8,31 +8,122 @@ import ReactDOM from "react-dom/client";
 // Bable transpile code into react.createElement
 
 // React component
-const elem = <span>React Element</span>;
 
-const title = (
-  <div>
-    <h1 className="head" tabIndex="5">
-      {elem}<br/>
-      Namaste React uisng JSX
-    </h1>
-  </div>
-);
+/* 
+Header 
+     logo 
+     Navitems
+Body
+   - search bar component
+   - card container
+          - restro card
+Footer
+ - cpyright
+ - LInks
+ -address
+ - contant
 
+*/
 
-// functinal component - NEW - just a normal js function return jsx
-
-// Component composition
-const HeadingComponent = () => {
+const Header = () => {
   return (
-    <div id="container">
-      <h2>{title}</h2>
-      <h1 className="header">Namste react functional component</h1>
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=food&sf=&txt_keyword=All" />
+      </div>
+      <div className="nav-items">
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li>Cart</li>
+      </ul>
+
+      </div>
     </div>
-    
+  );
+}
+
+const objdata =[{
+  resName: "Meghna Food umesh mane",
+  cuisine: "Biryani, North Indain",
+},
+{
+  resName: "KFC",
+  cuisine: "Fast food North Indain",
+},
+{
+  resName: "Dominos",
+  cuisine: "Pizza, Fast food",
+
+},
+{
+  resName: "Burger King",
+  cuisine: "Fast food, Burger",
+},
+{
+  resName: "Subway",
+  cuisine: "Sandwich, Fast food",
+},
+{
+  resName: "Haveli",
+  cuisine: "North Indain, Punjabi"
+}
+];
+
+
+
+const RestaurantCard = ({ resData }) => {
+  return (
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+      <img
+        alt="logo-image"
+        className="res-logo"
+        src="https://vismaifood.com/storage/app/uploads/public/912/551/ed8/thumb__700_0_0_0_auto.jpg"
+      />
+      <h3>{resData.resName}</h3>
+      <h4>{resData.cuisine}</h4>
+      <h4>4.4 stars</h4>
+      <h4>38 min</h4>
+    </div>
   );
 };
 
+/*
+
+    {arrList.map((restaurant) =>(
+      <RestaurantCard resData={restaurant} />
+    ))}
+*/
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search </div>
+      <div className="res-container">
+        {objdata.map((restaurant) => (
+          <RestaurantCard resData={restaurant} key={restaurant.resName} />)
+          )}
+      </div>
+    </div>
+  );
+}
+
+
+//props - passing arguments to component
+
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+     <Header/>
+     <Body/>
+    </div>
+  )
+}
+
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent/>);
+root.render(<AppLayout />);
