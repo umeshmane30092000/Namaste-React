@@ -50,3 +50,13 @@ Footer
  - Normal Javascript function
  - useState() - super poweful state varible
  - useEffect()
+
+# Adding ways to css to React
+ - Normal css way
+ - saas , scsss way
+ - styled components way
+ - Material UI (MUI)- prebuild component- Button-Popular
+ - Bootraps 
+ - chakra UI
+ - ant Design-popular
+ - Tailwind css - popular
